@@ -17,8 +17,16 @@ dynamic:
   ES_ID: docker-compose ps -q app_es
   REDIS_ID: docker-compose ps -q app_redis
   DOCKER_HTTP_PROXY: echo $HTTP_PROXY
+  USER_ID: id -u
+  GROUP_ID: id -g
 
 environments:
   docker:
     paths:
       - "dev-ops/docker/actions"
+    templates:
+      - source: ".env.dist"
+        destination: ".env"
+      - source: "dev-ops/docker/docker-compose.override.yml"
+        destination: "./docker-compose.override.yml"
+

@@ -1,9 +1,11 @@
 /.idea
 /.psh.yaml
 /.psh.yaml.override
+/.env
 /shopware
 
 # dev-ops
+/.docker-sync/
 /docker-compose.override.yml
 /dev-ops/docker/containers/mysql/createuser.sh
 /dev-ops/docker/containers/php7/createuser.sh

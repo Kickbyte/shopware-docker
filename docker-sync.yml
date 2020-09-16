@@ -1,0 +1,12 @@
+version: "2"
+
+options:
+  max-attempt: 30
+
+syncs:
+  app_server-sw5:
+    src: './'
+    sync_excludes: ['.git', '.idea', 'dev-ops/docker/_volumes', 'shopware/var', 'shopware/web', '.docker-sync']
+    sync_userid: $USER_ID
+    sync_groupid: $GROUP_ID
+

@@ -5,8 +5,7 @@ services:
     build: dev-ops/docker/containers/php7
     volumes:
       - ~/.composer/cache:/var/www/composer-cache-dir:Z
-      - .:/project:Z
-      - .:/var/www/shopware:Z
+      - app_server-sw5:/var/www/shopware:nocopy
     links:
       - app_mysql:mysql
     environment:
@@ -40,3 +39,7 @@ services:
     build: dev-ops/docker/containers/redis
     volumes:
       - ./dev-ops/docker/_volumes/app-redisdata:/data:Z
+
+volumes:
+    app_server-sw5:
+        external: true

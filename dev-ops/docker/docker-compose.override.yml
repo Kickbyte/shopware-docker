@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+    app_server:
+        build:
+            args:
+                USER_ID: __USER_ID__
+                GROUP_ID: __GROUP_ID__
+        environment:
+            CONTAINER_UID: __USER_ID__
+            APPLICATION_UID: __USER_ID__
+            APPLICATION_GID: __GROUP_ID__
